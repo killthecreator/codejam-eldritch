@@ -2,6 +2,7 @@
 body {
   display: flex;
   flex-direction: column;
+  background: url("./assets/home.png");
 }
 
 /*# sourceMappingURL=index.css.map */
