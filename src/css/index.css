@@ -2,7 +2,34 @@
 body {
   display: flex;
   flex-direction: column;
-  background: url("./assets/home.png");
+  background: url("../../assets/home.png");
+}
+body .containter-ancients {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+body .containter-ancients .card {
+  width: 200px;
+  height: 300px;
+  border: solid #000000 1px;
+  border-radius: 10px;
+}
+body .containter-ancients .card-ancient-1 {
+  background: url("../../assets/Ancients/Azathoth.png");
+  background-size: cover;
+}
+body .containter-ancients .card-ancient-2 {
+  background: url("../../assets/Ancients/Cthulthu.png");
+  background-size: cover;
+}
+body .containter-ancients .card-ancient-3 {
+  background: url("../../assets/Ancients/IogSothoth.png");
+  background-size: cover;
+}
+body .containter-ancients .card-ancient-4 {
+  background: url("../../assets/Ancients/ShubNiggurath.png");
+  background-size: cover;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -4,5 +4,34 @@
 body {
     display: flex;
     flex-direction: column;
-    background: url('./assets/home.png');
+    background: url('../../assets/home.png');
+
+    .containter-ancients {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+        .card {
+            width: 200px;
+            height: 300px;
+            border: solid #000000 1px;
+            border-radius: 10px;
+        }
+        .card-ancient-1 {
+            background: url('../../assets/Ancients/Azathoth.png');
+            background-size: cover;
+          }
+          .card-ancient-2 {
+            background: url('../../assets/Ancients/Cthulthu.png');
+            background-size: cover;
+          }
+          .card-ancient-3 {
+            background: url('../../assets/Ancients/IogSothoth.png');
+            background-size: cover;
+          }
+
+          .card-ancient-4 {
+            background: url('../../assets/Ancients/ShubNiggurath.png');
+            background-size: cover;
+          }
+    }
 }
