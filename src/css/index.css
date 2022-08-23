@@ -1,35 +1,111 @@
 /* sass ./src/sass/index.scss ./src/css/index.css */
+/* sass --watch ./src/sass/index.scss:./src/css/index.css */
 body {
   display: flex;
   flex-direction: column;
   background: url("../../assets/home.png");
 }
-body .containter-ancients {
+body .title {
+  margin-top: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+body .card {
+  width: 175px;
+  height: 250px;
+  border: solid #000000 1px;
+  border-radius: 10px;
+}
+body .card:hover {
+  transform: scale(1.2);
+}
+body .container-ancients-cards {
   display: flex;
   justify-content: space-around;
   margin: 20px;
 }
-body .containter-ancients .card {
-  width: 200px;
-  height: 300px;
-  border: solid #000000 1px;
-  border-radius: 10px;
-}
-body .containter-ancients .card-ancient-1 {
+body .container-ancients-cards #ancient-1 {
   background: url("../../assets/Ancients/Azathoth.png");
   background-size: cover;
 }
-body .containter-ancients .card-ancient-2 {
+body .container-ancients-cards #ancient-2 {
   background: url("../../assets/Ancients/Cthulthu.png");
   background-size: cover;
 }
-body .containter-ancients .card-ancient-3 {
+body .container-ancients-cards #ancient-3 {
   background: url("../../assets/Ancients/IogSothoth.png");
   background-size: cover;
 }
-body .containter-ancients .card-ancient-4 {
+body .container-ancients-cards #ancient-4 {
   background: url("../../assets/Ancients/ShubNiggurath.png");
   background-size: cover;
+}
+body .container-difficulty-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+body .container-difficulty-buttons .difficulty-button {
+  width: 100px;
+  padding: 10px;
+  background: transparent;
+  border: solid #000000 3px;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+body .container-difficulty-buttons .difficulty-button:hover {
+  transform: scale(1.1);
+}
+body .container-deck-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+body .container-deck-cards .tracker {
+  /* display: none; */
+}
+body .container-deck-cards .tracker .stage-title {
+  font-size: 18px;
+}
+body .container-deck-cards .tracker .stage-values-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+body .container-deck-cards .tracker .stage-values-container .stage-value {
+  width: 60px;
+  height: 40px;
+  border: solid white 2px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+body .container-deck-cards .tracker .stage-values-container #stage-value-1-1,
+body .container-deck-cards .tracker .stage-values-container #stage-value-2-1,
+body .container-deck-cards .tracker .stage-values-container #stage-value-3-1 {
+  background-color: #004d00;
+}
+body .container-deck-cards .tracker .stage-values-container #stage-value-1-2,
+body .container-deck-cards .tracker .stage-values-container #stage-value-2-2,
+body .container-deck-cards .tracker .stage-values-container #stage-value-3-2 {
+  background-color: #cccc00;
+}
+body .container-deck-cards .tracker .stage-values-container #stage-value-1-3,
+body .container-deck-cards .tracker .stage-values-container #stage-value-2-3,
+body .container-deck-cards .tracker .stage-values-container #stage-value-3-3 {
+  background-color: #0000b3;
+}
+body .container-deck-cards #deck {
+  background: url("../../assets/mythicCardBackground.png");
+  background-size: cover;
+}
+body .container-deck-cards #deck,
+body .container-deck-cards #current {
+  opacity: 0;
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=index.css.map */
