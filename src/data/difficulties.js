@@ -1,5 +1,4 @@
-const difficulties = [
-  {
+const difficulties = [{
     id: 'easy',
     name: 'Низкая'
   },
@@ -13,4 +12,4 @@ const difficulties = [
   },
 ]
 
-export default difficulties
+export default difficulties;

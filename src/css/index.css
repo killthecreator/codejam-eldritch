@@ -1,0 +1,7 @@
+/* sass ./src/sass/index.scss ./src/css/index.css */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=index.css.map */
