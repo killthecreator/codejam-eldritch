@@ -1,56 +1,188 @@
 import {
+    stageValues,
     difficulty1,
     difficulty2,
     difficulty3,
     difficulty4,
     difficulty5,
     difficultyButtons,
+    deckTitle,
     deck,
     current,
 } from "../../constants.js";
-export const pickDifficulty = (e) => {
+
+import {
+    stageValuesArr
+} from './pickAncient.js';
+
+let currentDeckArr = [];
+
+const pickDifficulty = (e) => {
+    stageValues.forEach((item, index) => {
+        item.textContent = stageValuesArr[index];
+    });
+    let currentDeck = {
+            stage1: [],
+            stage2: [],
+            stage3: [],
+        },
+        blueCardsArr = [],
+        brownCardsArr = [],
+        greenCardsArr = [],
+        addCards = [];
     const target = e.target;
     target.style.border = 'solid #FFFFFF 2px';
 
-    /* const difficulties = target.parentElement.querySelectorAll('.difficulty-button'); */
     difficultyButtons.forEach(item => {
         if (item !== target) {
             item.style.border = 'solid #000000 3px';
         }
     });
 
-    let cardsArr = [];
-
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
     switch (target) {
         case difficulty1:
-            stageValuesArr = [1, 2, 1, 2, 3, 1, 2, 4, 0];
+            blueCardsArr = shuffleArray(new Array(4).fill(0).map((item, index) => item = index + 1));
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
+
+            brownCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 1));
+            addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
+
+            brownCardsArr.push(...addCards);
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
+
+
+            greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 1));
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
             break;
         case difficulty2:
-            stageValuesArr = [0, 2, 2, 1, 3, 0, 3, 4, 0];
+            blueCardsArr = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 1));
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
+
+            brownCardsArr = shuffleArray(new Array(16).fill(0).map((item, index) => item = index + 1));
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
+
+            greenCardsArr = shuffleArray(new Array(13).fill(0).map((item, index) => item = index + 1));
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
+
             break;
         case difficulty3:
-            let blueCardsArr = new Array(12).fill(0).map((item, index) => item = index + 1);
-            let brownCardsArr = new Array(21).fill(0).map((item, index) => item = index + 1);
-            let greenCardsArr = new Array(18).fill(0).map((item, index) => item = index + 1);
-            cardsArr = cardsArr.concat(shuffleArray(blueCardsArr), shuffleArray(brownCardsArr), shuffleArray(greenCardsArr));
+            blueCardsArr = shuffleArray(new Array(12).fill(0).map((item, index) => item = index + 1));
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
+
+            brownCardsArr = shuffleArray(new Array(21).fill(0).map((item, index) => item = index + 1));
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
+
+            greenCardsArr = shuffleArray(new Array(18).fill(0).map((item, index) => item = index + 1));
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
+
             break;
         case difficulty4:
-            stageValuesArr = [1, 2, 1, 3, 2, 1, 2, 4, 0];
+            blueCardsArr = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 5));
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
+
+            brownCardsArr = shuffleArray(new Array(16).fill(0).map((item, index) => item = index + 6));
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
+
+            greenCardsArr = shuffleArray(new Array(13).fill(0).map((item, index) => item = index + 6));
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
             break;
         case difficulty5:
-            stageValuesArr = [1, 2, 1, 3, 2, 1, 2, 4, 0];
+            blueCardsArr = shuffleArray(new Array(4).fill(0).map((item, index) => item = index + 9));
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
+
+            brownCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 17));
+            addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
+            brownCardsArr.push(...addCards);
+
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
+
+
+            greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 14));
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
             break;
     }
+    stageCardsFill();
 
+    function stageCardsFill() {
+        let curColor = 'green';
+        stageValuesArr.forEach((item, index) => {
+            if (index <= 2) {
+                if (curColor === 'green') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage1.push(greenCardsArr.pop());
+                    }
+                    curColor = 'brown';
+                } else if (curColor === 'brown') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage1.push(brownCardsArr.pop());
+                    }
+                    curColor = 'blue';
+                } else if (curColor === 'blue') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage1.push(blueCardsArr.pop());
+                    }
+                    curColor = 'green';
+                }
+                shuffleArray(currentDeck.stage1);
+
+            } else if (index <= 5) {
+                if (curColor === 'green') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage2.push(greenCardsArr.pop());
+                    }
+                    curColor = 'brown';
+                } else if (curColor === 'brown') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage2.push(brownCardsArr.pop());
+                    }
+                    curColor = 'blue';
+                } else if (curColor === 'blue') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage2.push(blueCardsArr.pop());
+                    }
+                    curColor = 'green';
+                }
+                shuffleArray(currentDeck.stage2);
+            } else {
+                if (curColor === 'green') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage3.push(greenCardsArr.pop());
+                    }
+                    curColor = 'brown';
+                } else if (curColor === 'brown') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage3.push(brownCardsArr.pop());
+                    }
+                    curColor = 'blue';
+                } else if (curColor === 'blue') {
+                    for (let i = 0; i < item; i++) {
+                        currentDeck.stage3.push(blueCardsArr.pop());
+                    }
+                    curColor = 'green';
+                }
+                shuffleArray(currentDeck.stage3);
+            }
+        });
+        currentDeckArr = [...currentDeck.stage3, ...currentDeck.stage2, ...currentDeck.stage1];
+    }
+
+    deckTitle.style.opacity = '1';
     deck.style.opacity = '1';
     current.style.opacity = '0';
-    return cardsArr;
 
+    return currentDeckArr;
+};
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+export {
+    currentDeckArr,
+    pickDifficulty,
+    shuffleArray
 };

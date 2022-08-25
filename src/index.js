@@ -19,8 +19,6 @@ import {
 
 ancientsContainer.addEventListener('click', (e) => pickAncient(e));
 
-difficultyButtons.forEach(item => {
-    item.addEventListener('click', (e) => pickDifficulty(e));
-});
+difficultyButtons.forEach(item => item.addEventListener('click', (e) => pickDifficulty(e)));
 
 deck.addEventListener('click', cardPick);
