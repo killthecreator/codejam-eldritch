@@ -1,4 +1,5 @@
-/* tsc ./src/index.ts */
+/* import "./sass/index.scss"; */
+import './css/index.css';
 import {
     ancientsContainer,
     difficultyButtons,

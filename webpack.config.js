@@ -6,7 +6,7 @@ const {
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js',
@@ -19,11 +19,11 @@ module.exports = {
                 use: 'babel-loader',
                 exclude: '/node_modules/',
             },
-            {
-                test: /\.[tj]s$/,
-                use: 'ts-loader',
-                exclude: '/node_modules/',
-            },
+            /*             {
+                            test: /\.[tj]s$/,
+                            use: 'ts-loader',
+                            exclude: '/node_modules/',
+                        }, */
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
                 type: 'asset/resource',
@@ -47,15 +47,15 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.ts'] /* Какие расширения не указываем при импорте/экспорте */
+        extensions: ['.js' /* , '.ts' */ ] /* Какие расширения не указываем при импорте/экспорте */
     },
     plugins: [
         new HtmlWebpackPlugin({
             /* Перекомпилирует index.html в минимизированную версию и закинет в dist */
-            template: './src/index.html',
+            template: './index.html',
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: './css/index.css',
         }),
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false,
