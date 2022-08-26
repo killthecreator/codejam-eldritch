@@ -83,25 +83,25 @@ const pickDifficulty = (e) => {
             blueCardsArr = blueCardsArr.map(item => item = item = `url('./assets/MythicCards/blue/blue${item}.png')`);
 
             brownCardsArr = shuffleArray(new Array(21).fill(0).map((item, index) => item = index + 1));
-            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../assets/MythicCards/brown/brown${item}.png')`);
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('./assets/MythicCards/brown/brown${item}.png')`);
 
             greenCardsArr = shuffleArray(new Array(18).fill(0).map((item, index) => item = index + 1));
-            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../assets/MythicCards/green/green${item}.png')`);
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('./assets/MythicCards/green/green${item}.png')`);
 
             break;
         case difficulty4:
             blueCardsArr = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 5));
-            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../assets/MythicCards/blue/blue${item}.png')`);
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('./assets/MythicCards/blue/blue${item}.png')`);
 
             brownCardsArr = shuffleArray(new Array(16).fill(0).map((item, index) => item = index + 6));
-            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../assets/MythicCards/brown/brown${item}.png')`);
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('./assets/MythicCards/brown/brown${item}.png')`);
 
             greenCardsArr = shuffleArray(new Array(13).fill(0).map((item, index) => item = index + 6));
-            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../assets/MythicCards/green/green${item}.png')`);
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('./assets/MythicCards/green/green${item}.png')`);
             break;
         case difficulty5:
             blueCardsArr = shuffleArray(new Array(4).fill(0).map((item, index) => item = index + 9));
-            blueCardsArr = blueCardsArr.map(item => item = item = `url('../../assets/MythicCards/blue/blue${item}.png')`);
+            blueCardsArr = blueCardsArr.map(item => item = item = `url('./assets/MythicCards/blue/blue${item}.png')`);
 
             brownCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 17));
             if (stageValuesArr[4] === 2) {
@@ -110,7 +110,7 @@ const pickDifficulty = (e) => {
                 addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
             }
             brownCardsArr.push(...addCards);
-            brownCardsArr = brownCardsArr.map(item => item = item = `url('../../assets/MythicCards/brown/brown${item}.png')`);
+            brownCardsArr = brownCardsArr.map(item => item = item = `url('./assets/MythicCards/brown/brown${item}.png')`);
 
             greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 14));
             if (stageValuesArr[3] === 3) {
@@ -118,7 +118,7 @@ const pickDifficulty = (e) => {
             }
             greenCardsArr.push(...addCards);
 
-            greenCardsArr = greenCardsArr.map(item => item = item = `url('../../assets/MythicCards/green/green${item}.png')`);
+            greenCardsArr = greenCardsArr.map(item => item = item = `url('./assets/MythicCards/green/green${item}.png')`);
             break;
     }
 
