@@ -12,12 +12,17 @@ import {
 } from "../../constants.js";
 
 import {
-    stageValuesArr
+    stageValuesArr,
+    stageValuesArrDynamic,
+    resetStageArrDynamic
 } from './pickAncient.js';
 
 let currentDeckArr = [];
 
 const pickDifficulty = (e) => {
+
+    resetStageArrDynamic(stageValuesArr);
+
     stageValues.forEach((item, index) => {
         item.textContent = stageValuesArr[index];
     });
@@ -45,13 +50,21 @@ const pickDifficulty = (e) => {
             blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
 
             brownCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 1));
-            addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
+            if (stageValuesArr[4] === 2) {
+                addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 3);
+            } else {
+                addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
+            }
 
             brownCardsArr.push(...addCards);
             brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
 
 
             greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 1));
+            if (stageValuesArr[3] === 3) {
+                addCards = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 6)).slice(length - 1);
+            }
+            greenCardsArr.push(...addCards);
             greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
             break;
         case difficulty2:
@@ -91,19 +104,25 @@ const pickDifficulty = (e) => {
             blueCardsArr = blueCardsArr.map(item => item = item = `url('../../../assets/MythicCards/blue/blue${item}.png')`);
 
             brownCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 17));
-            addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
+            if (stageValuesArr[4] === 2) {
+                addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 3);
+            } else {
+                addCards = shuffleArray(new Array(11).fill(0).map((item, index) => item = index + 6)).slice(length - 4);
+            }
             brownCardsArr.push(...addCards);
-
             brownCardsArr = brownCardsArr.map(item => item = item = `url('../../../assets/MythicCards/brown/brown${item}.png')`);
 
-
             greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 14));
+            if (stageValuesArr[3] === 3) {
+                addCards = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 6)).slice(length - 1);
+            }
+            greenCardsArr.push(...addCards);
+
             greenCardsArr = greenCardsArr.map(item => item = item = `url('../../../assets/MythicCards/green/green${item}.png')`);
             break;
     }
-    stageCardsFill();
 
-    function stageCardsFill() {
+    (function stageCardsFill() {
         let curColor = 'green';
         stageValuesArr.forEach((item, index) => {
             if (index <= 2) {
@@ -164,7 +183,7 @@ const pickDifficulty = (e) => {
             }
         });
         currentDeckArr = [...currentDeck.stage3, ...currentDeck.stage2, ...currentDeck.stage1];
-    }
+    })()
 
     deckTitle.style.opacity = '1';
     deck.style.opacity = '1';
@@ -183,6 +202,5 @@ function shuffleArray(array) {
 
 export {
     currentDeckArr,
-    pickDifficulty,
-    shuffleArray
+    pickDifficulty
 };

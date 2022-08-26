@@ -13,6 +13,12 @@ import {
 } from "../../constants.js";
 let stageValuesArr = [],
     stageValuesArrDynamic = [];
+
+
+const resetStageArrDynamic = (arr) => {
+    stageValuesArrDynamic = [...arr];
+};
+
 const pickAncient = (e) => {
     const target = e.target;
 
@@ -67,5 +73,6 @@ const pickAncient = (e) => {
 export {
     pickAncient,
     stageValuesArr,
-    stageValuesArrDynamic
+    stageValuesArrDynamic,
+    resetStageArrDynamic
 };
