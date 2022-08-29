@@ -203,5 +203,6 @@ function shuffleArray(array) {
 
 export {
     currentDeckArr,
-    pickDifficulty,
+    pickDifficulty
 };
+
