@@ -63,9 +63,10 @@ const pickDifficulty = (e) => {
             greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 1));
             if (stageValuesArr[3] === 3) {
                 addCards = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 6)).slice(length - 1);
+                greenCardsArr.push(...addCards);
             }
-            greenCardsArr.push(...addCards);
             greenCardsArr = greenCardsArr.map(item => item = item = `url('./assets/MythicCards/green/green${item}.png')`);
+            console.log(greenCardsArr);
             break;
         case difficulty2:
             blueCardsArr = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 1));
@@ -115,8 +116,8 @@ const pickDifficulty = (e) => {
             greenCardsArr = shuffleArray(new Array(5).fill(0).map((item, index) => item = index + 14));
             if (stageValuesArr[3] === 3) {
                 addCards = shuffleArray(new Array(8).fill(0).map((item, index) => item = index + 6)).slice(length - 1);
+                greenCardsArr.push(...addCards);
             }
-            greenCardsArr.push(...addCards);
 
             greenCardsArr = greenCardsArr.map(item => item = item = `url('./assets/MythicCards/green/green${item}.png')`);
             break;
@@ -202,5 +203,5 @@ function shuffleArray(array) {
 
 export {
     currentDeckArr,
-    pickDifficulty
+    pickDifficulty,
 };

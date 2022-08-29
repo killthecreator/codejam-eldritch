@@ -47,7 +47,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js' /* , '.ts' */ ] /* Какие расширения не указываем при импорте/экспорте */
+        extensions: ['.js', '.ts'] /* Какие расширения не указываем при импорте/экспорте */
     },
     plugins: [
         new HtmlWebpackPlugin({

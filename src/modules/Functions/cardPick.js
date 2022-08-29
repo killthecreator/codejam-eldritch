@@ -5,7 +5,7 @@ import {
 } from "../../constants.js";
 
 import {
-    currentDeckArr
+    currentDeckArr,
 } from "./pickDifficulty.js";
 
 import {
@@ -15,7 +15,6 @@ import {
 
 const cardPick = () => {
     current.style.background = currentDeckArr.pop();
-
 
     if (/green/.test(current.style.background)) {
         if (stageValuesArrDynamic[0] !== 0) stageValuesArrDynamic[0]--;
