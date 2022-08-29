@@ -1,0 +1,136 @@
+/* sass ./src/sass/index.scss ./src/css/index.css */
+/* sass --watch ./src/sass/index.scss:./src/css/index.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: url('../../assets/home.png');
+    .title {
+      margin-top: 10px;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .card {
+      width: 175px;
+      height: 250px;
+      border: solid #000000 1px;
+      border-radius: 10px;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+  }
+    .container-ancients-cards {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+        #ancient-1 {
+            background: url('../../assets/Ancients/Azathoth.png');
+            background-size: cover;
+          }
+          #ancient-2 {
+            background: url('../../assets/Ancients/Cthulthu.png');
+            background-size: cover;
+          }
+          #ancient-3 {
+            background: url('../../assets/Ancients/IogSothoth.png');
+            background-size: cover;
+          }
+
+          #ancient-4 {
+            background: url('../../assets/Ancients/ShubNiggurath.png');
+            background-size: cover;
+          }
+    }
+
+    .container-difficulty {
+      opacity: 0;
+
+      .container-difficulty-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+  
+        .difficulty-button {
+          width: 100px;
+          padding: 10px;
+          background: transparent;
+          border: solid #000000 3px;
+          border-radius: 5px;
+          color: #FFFFFF;
+          &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+          }
+  
+        }
+      }
+    }
+
+    .container-deck-cards {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px;
+
+      .tracker {
+        opacity: 0;
+
+        .stage-title {
+          font-size: 18px;
+        }
+
+        .stage-values-container {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+
+          .stage-value {
+            width: 60px;
+            height: 40px;
+            border: solid white 2px;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 600;
+          }
+
+          #stage-1-green,
+          #stage-2-green,
+          #stage-3-green {
+            background-color: darken(green, 10%);
+          }
+
+          #stage-1-brown,
+          #stage-2-brown,
+          #stage-3-brown {
+            background-color: darken(yellow, 10%);
+          }
+
+          #stage-1-blue,
+          #stage-2-blue,
+          #stage-3-blue {
+            background-color: darken(blue, 15%);
+          }
+        }
+      }
+
+      #deck {
+        background: url('../../assets/mythicCardBackground.png'); 
+        background-size: cover;
+      }
+
+      #deck, 
+      #current {
+        opacity: 0;
+        margin-top: 40px;
+      }
+
+    }
+
+    #deck-title {
+      opacity: 0;
+    }
+
+}
